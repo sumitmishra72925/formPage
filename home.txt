@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>welcome my homepage</title>
+</head>
+<body>
+<hr/>
+<table border="5px"width="500px" cellspacing="0px" cellpadding="9px" bgcolor="lightpink" align="center">
+<tr>
+<th> S.No</th>
+<th> Name</th>
+<th> Age</th>
+
+</tr>
+<tr>
+<td>1</td>
+<td>Abhishek</td>
+<td>19</td>
+
+</tr>
+<tr>
+<td>2</td>
+<td>Sumit</td>
+<td>20</td>
+
+</tr>
+<tr>
+<td>3</td>
+<td>Amit</td>
+<td>21</td>
+
+</tr>
+<tr>
+<td colspan="3">Total 3 person</td>
+
+
+
+</tr>
+
+</table>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<html>
+<head>
+        <title>JavaScript Form  Validation</title>
+<style type="text/css">
+    .Er{
+        color:red
+    }
+    form th{
+        text-align: right;
+    }
+    .submit_center{
+        text-align:center;
+    }
+</style>
+<script type="text/javascript">	
+    x=document.getElementById("txt_EmpId");
+    function fnnumbervalidate(id, lbl){
+        no=document.getElementById(id).value;
+        x=document.getElementById(lbl);
+        if(document.getElementById(id).value!=""){
+            if(isNaN(no)==true){
+                x.innerHTML="<span class='Er'>Error: Input should have <b>Numbers Only</b></span>";
+            }else{
+                x.innerHTML="";
+            }
+        }else{
+            x.innerHTML="<span class='Er'>This field should have a value</span>";
+        }
+    }    
+  
+    function fnclear(id, lbl){
+        document.getElementById(id).value="";
+    }
+    function fnallvalid(){
+        n=document.frm_emp.elements.length;
+        for(i=1; i<n-2;i++){
+            if(document.frm_emp.elements[i].value==""){
+                x=document.getElementById("eid");
+                x=document.getElementById(i);
+                x.innerHTML="<span class='Er'>Error: #"+i+" is invalid</span>";
+            }
+        }
+    }
+</script>
+</head>
+<body id="blank">
+
+<form name="frm_emp" id="frm_emp" action="xx.jsp">
+    <fieldset>
+        <legend>Employee Registration</legend>
+        <table>
+            <tr>
+                <th>*Employee ID: </th>
+                <td><input type="text" id="txt_EmpId" onblur="fnnumbervalidate('txt_EmpId','1')" onfocus="fnclear('txt_EmpId','1')"></td>
+                <td><div id="1" value=""></div></td>
+            </tr>                
+            <tr>
+                <th>Employee Name: </th>
+                <td><input type="text" id="txt_Empname"></td>
+                <td><div id="2"></div></td>
+            </tr>
+            <tr>
+                <th>DoB: </th>
+                <td><input type="text" id="txt_dob" name="dob" onfocus="fnclear('txt_dob','3')" placeholder="dd/mm/yyyy"></td>
+                <td><div id="3"></div></td>
+            </tr>
+            <tr>
+                <th>Gender: </th>
+                <td><input type="radio" id="rdo_gender" name="rdo_gen">Male<input type="radio" id="Radio1" name="rdo_gen">Female</td>
+                <td><div id="4"></div></td>
+            </tr>
+            <tr>
+                <th>*Age: </th>
+                <td><input type="text" id="txt_Age" onfocus="fnclear('txt_Age','6')" onblur="fnnumbervalidate('txt_Age','6')"></td>
+                <td><div id="6"></div></td>
+            </tr>
+            <tr>
+                <th>Address: </th>
+                <td><textarea id="txtarea_Address"></textarea></td>
+                <td><div id="7"></div></td>
+            </tr>
+            <tr>
+                <th>Qualification: </th>
+                <td>
+                    <select id="select_qual">
+                        <option>B.E</option>
+                        <option>B. Tech</option>
+                        <option>B.D</option>
+                        <option>BCA</option>
+                        <option>MCA</option>
+                    </select>
+                </td>
+                <td><div id="8" value=""></div></td>
+            </tr>
+            <tr>
+                <th>*Contact Number: </th>
+                <td><input type="text" id="txt_contact" onfocus="fnclear('txt_contact','9')" onblur="fnnumbervalidate('txt_contact','9')"></td>
+                <td><div id="9"></div></td>
+            </tr>
+            <tr>
+                <th>Area of Interest: </th>
+                <td><input type="text" id="txt_interest"></td>
+                <td><div id="10"></div></td>
+            </tr>
+            <tr>
+                <th>*Years of Experience</th>
+                <td><input type="text" id="txt_exp" onblur="fnnumbervalidate('txt_exp','11')" onfocus="fnclear('txt_exp','11')"></td>
+                <td><div id="11"></div></td>
+            </tr>
+        </table>
+    </fieldset>
+    <center>
+        <table width="100%">
+            <col align="right">
+            <tr>
+                <td class="submit_center">
+                    <input type="button" id="submit" value="Submit" onclick="fnallvalid()">
+                    <input type="button" onclick="document.getElementById('frm_emp').reset();" id="clear" value="Clear">
+                </td>                
+            </tr>
+        </table>
+    </center>
+</form>
+</body>
+</html>
